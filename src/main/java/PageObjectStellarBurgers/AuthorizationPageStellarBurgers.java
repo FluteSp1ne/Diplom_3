@@ -11,12 +11,10 @@ public class AuthorizationPageStellarBurgers {
     private By emailField = By.xpath(".//input[@name = 'name']");
     private By passwordField = By.xpath(".//input[@name = 'Пароль']");
     private By signInButton = By.xpath(".//button[text() = 'Войти']");
-    private By recoverPasswordButton = By.xpath(".//a[text() = 'Восстановить пароль']");
 
     public AuthorizationPageStellarBurgers(WebDriver driver){
         this.driver = driver;
     }
-
     public void checkHeadLineSignInPage(){
         driver.findElement(headLineSignInPage);
     }

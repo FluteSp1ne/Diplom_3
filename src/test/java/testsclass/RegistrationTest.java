@@ -20,6 +20,8 @@ public class RegistrationTest {
     DriverFactory factory;
     private String accessToken;
     public boolean registrationUser;
+    private static final String EMAIL = "OhoRom@yandex.ru";
+    private static final String PASSWORD = "Kerolain";
 
     @Before
     public void initDriver() {
@@ -61,7 +63,7 @@ public class RegistrationTest {
     @After
     public void deleteAccount() {
         if(registrationUser) {
-            accessToken = UserSteps.loginUser("OhoRom@yandex.ru", "Kerolain");
+            accessToken = UserSteps.loginUser(EMAIL, PASSWORD);
 
             if (accessToken != null) {
                 Response response = UserSteps.deleteUser(accessToken);
@@ -71,7 +73,7 @@ public class RegistrationTest {
     }
 
     @After
-    public void tearDown(){
+    public void tearDown() {
         factory.getDriver().quit();
     }
 }

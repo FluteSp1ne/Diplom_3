@@ -21,14 +21,30 @@ public class ConstructorTest {
     }
 
     @Test
-    @Step("Переходы к разделам конструктора")
-    public void checkTabsButtonsTest(){
+    @Step("Переход к разделу Соусы")
+    public void checkTabSauceTest(){
         WebDriver driver = factory.getDriver();
         ConstructorPageStellarBurgers objConstructorPage = new ConstructorPageStellarBurgers(driver);
         objConstructorPage.clickSauceTabButton();
         objConstructorPage.checkSauceList();
+    }
+
+    @Test
+    @Step("Переход к разделу Булки")
+    public void checkTabBunTest(){
+        WebDriver driver = factory.getDriver();
+        ConstructorPageStellarBurgers objConstructorPage = new ConstructorPageStellarBurgers(driver);
+        objConstructorPage.clickSauceTabButton();
+        objConstructorPage.checkNotActiveBunList();
         objConstructorPage.clickBunTabButton();
         objConstructorPage.checkBunList();
+    }
+
+    @Test
+    @Step("Переход к разделу Начинки")
+    public void checkTabFillingTest(){
+        WebDriver driver = factory.getDriver();
+        ConstructorPageStellarBurgers objConstructorPage = new ConstructorPageStellarBurgers(driver);
         objConstructorPage.clickFillingsTabButton();
         objConstructorPage.checkFillingsList();
     }

@@ -15,7 +15,6 @@ public class RegistrationPageStellarBurgers {
     private By passwordField = By.xpath(".//label[text() = 'Пароль']");
     private By activePasswordField = By.xpath("//label[text()='Пароль']/following-sibling::input");
     private By registrationButton = By.xpath(".//button[text() = 'Зарегистрироваться']");
-    private By singInButtonRegistrationPage = By.xpath(".//a[text() = 'Войти']");
     private By incorrectPasswordNotif = By.xpath(".//p[text() ='Некорректный пароль']");
 
     public RegistrationPageStellarBurgers(WebDriver driver){

@@ -17,6 +17,9 @@ public class FromPersonalAccountToConstructorTest {
 
     private DriverFactory factory;
     private String accessToken;
+    private static final String EMAIL = "OhoRom@yandex.ru";
+    private static final String PASSWORD = "Kerolain";
+    private static final String NAME = "Edward";
 
     @Before
     public void initDriver(){
@@ -24,7 +27,7 @@ public class FromPersonalAccountToConstructorTest {
         factory.initDriver();
         WebDriver driver = factory.getDriver();
         driver.get("https://stellarburgers.nomoreparties.site/login");
-        UserSteps.createUser("OhoRom@yandex.ru", "Kerolain", "Edward");
+        UserSteps.createUser(EMAIL, PASSWORD, NAME);
         AuthorizationPageStellarBurgers objAuthorizationPage = new AuthorizationPageStellarBurgers(driver);
         objAuthorizationPage.checkHeadLineSignInPage();
         objAuthorizationPage.setEmail();
@@ -57,7 +60,7 @@ public class FromPersonalAccountToConstructorTest {
 
     @After
     public void deleteAccount() {
-        accessToken = UserSteps.loginUser("OhoRom@yandex.ru", "Kerolain");
+        accessToken = UserSteps.loginUser(EMAIL, PASSWORD);
 
         if (accessToken != null) {
             Response response = UserSteps.deleteUser(accessToken);

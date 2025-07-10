@@ -14,7 +14,6 @@ public class PersonalAccountPageStellarBurgers {
     public PersonalAccountPageStellarBurgers(WebDriver driver){
         this.driver = driver;
     }
-
     public void clickConstructorButton(){
         driver.findElement(constructorButton).click();
     }
